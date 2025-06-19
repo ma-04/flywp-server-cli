@@ -86,7 +86,7 @@ get_release_info() {
     
     # Add a user-agent to avoid rate limiting
     if ! curl -s -L -H "User-Agent: FlyWP-Installer" \
-        https://api.github.com/repos/flywp/server-cli/releases/latest \
+        https://api.github.com/repos/ma-04/flywp-server-cli/releases/latest \
         -o "$GITHUB_API_RESPONSE"; then
         error_exit "Failed to access GitHub API. Please check your internet connection."
     fi
@@ -115,7 +115,7 @@ get_release_info() {
     info_msg "Latest release version: $TAG_NAME"
     
     # Since we know the exact format of the release assets, construct the URL directly
-    DOWNLOAD_URL="https://github.com/flywp/server-cli/releases/download/${TAG_NAME}/fly-linux-${ARCH}.tar.gz"
+    DOWNLOAD_URL="https://github.com/ma-04/flywp-server-cli/releases/download/${TAG_NAME}/fly-linux-${ARCH}.tar.gz"
     
     # Clean up
     rm -f "$GITHUB_API_RESPONSE"
